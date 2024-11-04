@@ -10,11 +10,11 @@ public class PosterManager {
         moviesList = tmp;
     }
 
-    public String[] showAll() {
+    public String[] findAll() {
         return moviesList;
     }
 
-    public String[] showLast() {
+    public String[] findLast() {
         int counter = 0;
         if (moviesList.length < 5) {
             counter = moviesList.length;
@@ -28,7 +28,7 @@ public class PosterManager {
         return tmp;
     }
 
-    public String[] showLast(int howManyMovies) {
+    public String[] findLast(int howManyMovies) {
         int counter = 0;
         if (moviesList.length < howManyMovies) {
             counter = moviesList.length;

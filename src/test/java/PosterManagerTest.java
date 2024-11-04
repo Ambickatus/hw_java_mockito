@@ -5,37 +5,37 @@ public class PosterManagerTest {
     PosterManager movies = new PosterManager();
 
     @Test
-    public void showAllMoviesTest() {
+    public void findAllMoviesTest() {
         movies.add("Movie1");
         movies.add("Movie2");
         movies.add("Movie3");
         movies.add("Movie4");
 
         String[] expected = {"Movie1", "Movie2", "Movie3", "Movie4"};
-        String[] actual = movies.showAll();
+        String[] actual = movies.findAll();
 
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void showAllMoviesZeroTest() {
+    public void findAllMoviesZeroTest() {
         String[] expected = {};
-        String[] actual = movies.showAll();
+        String[] actual = movies.findAll();
 
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void showAllOneMovieTest() {
+    public void findAllOneMovieTest() {
         movies.add("Movie1");
         String[] expected = {"Movie1"};
-        String[] actual = movies.showAll();
+        String[] actual = movies.findAll();
 
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void showLastFiveMoviesTest() {
+    public void findLastFiveMoviesTest() {
         movies.add("Movie1");
         movies.add("Movie2");
         movies.add("Movie3");
@@ -43,35 +43,35 @@ public class PosterManagerTest {
         movies.add("Movie5");
 
         String[] expected = {"Movie5", "Movie4", "Movie3", "Movie2", "Movie1"};
-        String[] actual = movies.showLast();
+        String[] actual = movies.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void showLastFiveMoviesLessThanFiveTest() {
+    public void findLastFiveMoviesLessThanFiveTest() {
         movies.add("Movie1");
         movies.add("Movie2");
         movies.add("Movie3");
         movies.add("Movie4");
 
         String[] expected = {"Movie4", "Movie3", "Movie2", "Movie1"};
-        String[] actual = movies.showLast();
+        String[] actual = movies.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void showLastFiveMoviesZeroTest() {
+    public void findLastFiveMoviesZeroTest() {
 
         String[] expected = {};
-        String[] actual = movies.showLast();
+        String[] actual = movies.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void showLastFiveMoviesSixTest() {
+    public void findLastFiveMoviesSixTest() {
         movies.add("Movie1");
         movies.add("Movie2");
         movies.add("Movie3");
@@ -80,13 +80,13 @@ public class PosterManagerTest {
         movies.add("Movie6");
 
         String[] expected = {"Movie6", "Movie5", "Movie4", "Movie3", "Movie2"};
-        String[] actual = movies.showLast();
+        String[] actual = movies.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void showLastMoviesOneTest() {
+    public void findLastMoviesOneTest() {
         movies.add("Movie1");
         movies.add("Movie2");
         movies.add("Movie3");
@@ -95,23 +95,23 @@ public class PosterManagerTest {
         movies.add("Movie6");
 
         String[] expected = {"Movie6"};
-        String[] actual = movies.showLast(1);
+        String[] actual = movies.findLast(1);
 
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void showLastOneMoviesOneTest() {
+    public void findLastOneMoviesOneTest() {
         movies.add("Movie4");
 
         String[] expected = {"Movie4"};
-        String[] actual = movies.showLast(1);
+        String[] actual = movies.findLast(1);
 
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void showLastZeroMoviesTest() {
+    public void findLastZeroMoviesTest() {
         movies.add("Movie1");
         movies.add("Movie2");
         movies.add("Movie3");
@@ -120,21 +120,21 @@ public class PosterManagerTest {
         movies.add("Movie6");
 
         String[] expected = {};
-        String[] actual = movies.showLast(0);
+        String[] actual = movies.findLast(0);
 
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void showLastMoviesZeroListTest() {
+    public void findLastMoviesZeroListTest() {
         String[] expected = {};
-        String[] actual = movies.showLast(5);
+        String[] actual = movies.findLast(5);
 
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void showLastMoviesMoreThanHaveTest() {
+    public void findLastMoviesMoreThanHaveTest() {
         movies.add("Movie1");
         movies.add("Movie2");
         movies.add("Movie3");
@@ -143,7 +143,7 @@ public class PosterManagerTest {
         movies.add("Movie6");
 
         String[] expected = {"Movie6", "Movie5", "Movie4", "Movie3", "Movie2", "Movie1"};
-        String[] actual = movies.showLast(12);
+        String[] actual = movies.findLast(12);
 
         Assertions.assertArrayEquals(expected, actual);
     }
