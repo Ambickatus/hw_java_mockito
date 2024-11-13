@@ -1,5 +1,14 @@
 public class PosterManager {
     private String[] moviesList = new String[0];
+    private int howManyMovies;
+
+    public PosterManager(int howManyMovies) {
+        this.howManyMovies = howManyMovies;
+    }
+
+    public PosterManager() {
+        this.howManyMovies = 5;
+    }
 
     public void add(String movie) {
         String[] tmp = new String[moviesList.length + 1];
@@ -14,21 +23,8 @@ public class PosterManager {
         return moviesList;
     }
 
-    public String[] findLast() {
-        int counter = 0;
-        if (moviesList.length < 5) {
-            counter = moviesList.length;
-        } else {
-            counter = 5;
-        }
-        String[] tmp = new String[counter];
-        for (int i = 0; i < counter; i++) {
-            tmp[i] = moviesList[moviesList.length - 1 - i];
-        }
-        return tmp;
-    }
 
-    public String[] findLast(int howManyMovies) {
+    public String[] findLast() {
         int counter = 0;
         if (moviesList.length < howManyMovies) {
             counter = moviesList.length;
